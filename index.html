@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				font-family: "microsoft sans serif";
+				overflow: hidden;
+				background-color: #000000;
+			}
+			.time{
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				position: absolute;
+				color: white;
+				font-size: 2.5rem;
+				/* -webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: linear-gradient(90deg, #ffd0f3, #f00 ); */
+			}
+			.bg{
+				width: 150px;
+				color: white;
+				margin: 180px auto;
+				font-size: 3.0rem;
+				text-align: center;
+			}
+			@media screen and (max-width: 960px) {
+				.time{
+					width: auto;
+					font-size: 1.1rem;
+				}
+			}
+		</style>
+		<script>
+			$(function(){
+				$('#sulli').click(function(){
+					// alert('adfa');
+				});
+				console.log("Made by Escher1108")
+			});
+		</script>
+	</head>
+	<body>
+		<div class="bg" id="sulli">崔真理</div>
+		<span id="runtime_span" class="time"></span>
+		<script type="text/javascript">
+			function show_runtime() {
+				window.setTimeout("show_runtime()", 1000);
+				X = new Date("10/14/2019 00:00:00");
+				Y = new Date();
+				T = (Y.getTime() - X.getTime());
+				M = 24 * 60 * 60 * 1000;
+				a = T / M;
+				A = Math.floor(a);
+				b = (a - A) * 24;
+				B = Math.floor(b);
+				c = (b - B) * 60;
+				C = Math.floor((b - B) * 60);
+				D = Math.floor((c - C) * 60);
+				runtime_span.innerHTML = "" + A + "&nbsp天&nbsp" + B + "&nbsp时&nbsp" + C + "&nbsp分&nbsp" + D + "&nbsp秒&nbsp";
+			}
+			show_runtime();
+		</script>
+	</body>
+</html>
