@@ -1,71 +1,41 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>崔真理</title>
+	<head lang="en">
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title></title>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-		<script type="text/javascript">
-			function loop() {
-		    var i, n, s = '';
-		
-		    for (i = 0; i < 10; i++) {
-		        n = Math.floor(Math.sin((Date.now()/200) + (i/2)) * 4) + 4;
-		
-		        s += String.fromCharCode(0x2581 + n);
-		    }
-		
-		    window.location.hash = s;
-		
-		    setTimeout(loop, 50);
-		}
-		
-		loop();
-			</script>
-		<style>
-			body{
-				margin: 0;
-				padding: 0;
-				font-family: "microsoft sans serif";
-				overflow: hidden;
-				background-color: #000000;
-			}
-			.time{
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%,-50%);
-				position: absolute;
-				color: white;
-				font-size: 2.5rem;
-				/* -webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-image: linear-gradient(90deg, #ffd0f3, #f00 ); */
-			}
-			.bg{
-				width: 150px;
-				color: white;
-				margin: 180px auto;
-				font-size: 3.0rem;
-				text-align: center;
-			}
-			@media screen and (max-width: 960px) {
-				.time{
-					width: auto;
-					font-size: 1.1rem;
-				}
-			}
-		</style>
+		<link type="text/css" href="./css/mystyle.css" rel="stylesheet ">
 		<script>
-			$(function(){
-				$('#sulli').click(function(){
-					// alert('adfa');
+			$(function() {
+				$('#sulli').click(function() {
+					$(".Container,.text").css("display", 'block');
+					$('body').css("background","#951c13");
+					$('#runtime_span,#sulli').css("display", 'none');
+				});
+				$('#carousel').click(function() {
+					$(".Container,.text").css("display", 'none');
+					$('body').css("background","#000000");
+					$('#runtime_span,#sulli').css("display", 'block');
 				});
 				console.log("Made by Escher1108")
 			});
 		</script>
 	</head>
 	<body>
+		<p id="show"></p>
+		<div class="Container">
+			<div id="carousel">
+				<figure><img src="images/1.jpg"></figure>
+				<figure><img src="images/2.jpg"></figure>
+				<figure><img src="images/3.jpg"></figure>
+				<figure><img src="images/4.jpg"></figure>
+				<figure><img src="images/5.jpg"></figure>
+				<figure><img src="images/6.jpg"></figure>
+			</div>
+		</div>
 		<div class="bg" id="sulli">崔真理</div>
+		<div class="text">LOVE YOU FOREVER</div>
+
 		<span id="runtime_span" class="time"></span>
 		<script type="text/javascript">
 			function show_runtime() {
